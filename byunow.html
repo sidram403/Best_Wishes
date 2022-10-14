@@ -25,21 +25,21 @@
         <div class="col-md-12">
           <div class="form h-100">
             <h3>Get Started</h3>
-            <form class="mb-5" type="submit"   >
+            <form class="mb-5" action="" method="post"   >
               <div class="row">
-                <div class="col-md-6 form-group mb-3">
+                <div class="col-md-6   mb-3">
                   <label for="" class="col-form-label">Name *</label>
                   <input type="text" class="form-control" name="name" id="name" placeholder="Your name" required>
                 </div>
-                <div class="col-md-6 form-group mb-3">
+                <div class="col-md-6   mb-3">
                   <label for="" class="col-form-label">Email *</label>
                   <input type="text" class="form-control" name="email" id="email"  placeholder="Your email" required>
                 </div>
-                <div class="col-md-6 form-group mb-3">
+                <div class="col-md-6   mb-3">
                     <label for="" class="col-form-label">Mobile Number *</label>
                     <input type="number" class="form-control" name="number" id="phone"  placeholder="Your Number" required>
                 </div>
-                <div class="col-md-6 form-group mb-3">
+                <div class="col-md-6   mb-3">
                     <label for="" class="col-form-label">State *</label>
                     <input type="text" class="form-control" name="state" id="state"  placeholder="State" required>
                 </div>
@@ -47,7 +47,7 @@
               
 
               <div class="row">
-                <div class="col-md-6 form-group mb-3">
+                <div class="col-md-6   mb-3">
                     <label for="budget" class="col-form-label">Category</label>
                     <select class="custom-select" id="Category" name="budget" onchange="random()">
                         <option selected>Select Required Category</option>
@@ -71,7 +71,7 @@
 
                     </select>
                 </div>
-                <div class="col-md-6 form-group mb-3">
+                <div class="col-md-6   mb-3">
                     <label for="budget" class="col-form-label">Products</label>
                     <select class="custom-select" id="items" name="budget">
                         <option value=""></option>
@@ -83,11 +83,11 @@
                         <option value="$25,000 >">$25,000 ></option> -->
                     </select>
                 </div>
-                <div class="col-md-6 form-group mb-3">
+                <div class="col-md-6   mb-3">
                     <label for="" class="col-form-label">Pincode *</label>
                     <input type="number" class="form-control" name="pincode" id="pincode"  placeholder="Pincode" required>
                 </div>
-                <div class="col-md-6 form-group mb-3">
+                <div class="col-md-6   mb-3">
                     <label for="budget" class="col-form-label">Fast Delivery</label>
                     <select class="custom-select" id="delivery" name="budget">
                         <option selected>Select Options</option>
@@ -100,23 +100,20 @@
               </div>
 
               <div class="row">
-                <div class="col-md-12 form-group mb-3">
+                <div class="col-md-12   mb-3">
                   <label for="message" class="col-form-label">Address *</label>
                   <textarea class="form-control" name="message" id="address" cols="30" rows="4"  placeholder="Enter Your Full Address" required></textarea>
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-12 form-group" >
-                  <button type="submit" value="Send Message" class="btn btn-primary rounded-0 py-2 px-4" onclick="send()" >Send Message</button>
-                  <span class="submitting"></span>
+                <div class="col-md-12  " >
+                  <button type="submit"  class="btn btn-primary rounded-0 py-2 px-4" onclick="send()" >Send Message</button>
+                  
                 </div>
               </div>
             </form>
 
-            <div id="form-message-warning mt-4"></div> 
-            <div id="form-message-success">
-              Your message was sent, thank you!
-            </div>
+            
 
           </div>
         </div>
@@ -126,30 +123,15 @@
   </div>
     
     
-  <script>
-    function send(){
-      var name = document.getElementById('name').value;
-      console.log(name);
-      var email = document.getElementById('email').value;
-      console.log(email);
-      var url = "https://wa.me/9108761650?text="
-                    + "Name: " + name + "%0a"
-                    + "Phone: " + phone + "%0a"
-                    + "Email: " + email + "%0a"
-                    + "Service: " + service;
-
-                window.open(url, '_blank').focus();
-    }
-   
-    </script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script> -->
     <script src="js/main.js"></script>
-    <script src="js/custom.js"></script>
+    
 
   </body>
 </html>

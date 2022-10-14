@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Byu Products - Best Wishes</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet"
+        id="bootstrap-css" />
+    <style>
+        .register .nav-tabs .nav-link:hover {
+            border: none;
+        }
+
+        .text-align {
+            margin-top: -3%;
+            margin-bottom: -9%;
+
+            padding: 10% 2%;
+            
+        }
+
+        .form-new {
+            margin-right: 22%;
+
+        }
+
+        .register-heading {
+            margin-left: 21%;
+            margin-bottom: 10%;
+            color: #e9ecef;
+        }
+
+        .register-heading h1 {
+           
+            margin-bottom: 10%;
+            color: #e9ecef;
+        }
+
+        .register {
+            background: #fff;
+            margin-top: 10%;
+            box-shadow: 0 0px 20px 0 rgb(0 0 0 / 5%);
+            border: 1px solid #efefef;
+
+        }
+
+        .btnSubmit {
+            width: 50% !important;
+            border-radius: 1rem;
+            padding: 1.5%;
+            color: #fff;
+            background-color: #03612e;
+            border: none;
+            cursor: pointer;
+            margin-right: 6%;
+            color: rgb(246, 246, 252);
+            margin-top: 4%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container register">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="tab-pane fade show active text-align form-new" id="home" role="tabpanel"
+                    aria-labelledby="home-tab">
+                    <h3 class="register-heading text-nowrap">Enter details to order</h3>
+                    <div class="row register-form">
+                        <div class="col-md-12">
+                            <form >
+                                <div class="form-group ">
+                                    <input type="text" name="Name" id="name" class="form-control"
+                                        placeholder="Your Name *" value="" required="" />
+                                </div>
+                                <div class="form-group ">
+                                    <input type="text" name="Email" id="email" class="form-control"
+                                        placeholder="Your Email *" value="" required="" />
+                                </div>
+                                <div class="form-group ">
+                                    <input type="number" name="Phone" id="phone" class="form-control"
+                                        placeholder="Your Contact Number *" value="" required="" />
+                                </div>
+                                <div class="form-group ">
+                                    
+                                    <select class=" custom-select" id="Category" name="budget" onchange="random()">
+                                        <option selected>Select Required Category</option>
+                                        <option value="Name_Initials">Name Initials</option>
+                                        <option value="Personalized_Keychains">Personalized Keychains</option>
+                                        <option value="Table_tops">Table tops</option>
+                                        <option value="Glowing_Plaque">Glowing Plaque</option>
+                                        <option value="Personalized_Cushions">Personalized Cushions</option>
+                                        <option value="Engagement_Platter">Engagement Platter</option>
+                                        <option value="Miscellaneou_Products">Miscellaneous Products</option>
+                                        <option value="Religious_Products">Religious Products</option>
+                                        <option value="Personalized_wall_clocks">Personalized wall clocks</option>
+                                        <option value="Personalized_wallets">Personalized wallets</option>
+                                        <option value="Combo">Combo</option>
+                                        <option value="Chocolates">Chocolates</option>
+                                        <option value="Name_Plate">Name Plate</option>
+                                        <option value="Photo_Frame">Photo Frame</option>
+                                        <option value="Calendar">Calendar</option>
+                                        <option value="Gifts_for_valentine's">Gifts for valentine's</option>
+                                        <option value="Neon_Signs">Neon Signs</option>
+                                    </select>
+                                </div>
+                                <div class="form-group ">
+                                    <select class=" custom-select" id="items">
+                                        <option value=""></option>
+                                    </select>
+                                </div>
+                                <div class="form-group ">
+                                    <textarea type="text" name="address" id="address" class="form-control"
+                                        placeholder=" Address *" value="" cols="30" rows="4" required=""></textarea>
+                                </div>
+                                <div class="form-group ">
+                                    <input type="text" name="state" id="state" class="form-control"
+                                        placeholder="State *" value="" required="" />
+                                </div>
+                                <div class="form-group ">
+                                    <input type="text" name="pincode" id="pincode" class="form-control"
+                                        placeholder="Pincode *" value="" required="" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="button" name="submit" class="btnSubmit btn-block" onclick="gotowhatsapp()" value="Submit" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        function gotowhatsapp() {
+
+            var name = document.getElementById("name").value;
+            var phone = document.getElementById("phone").value;
+            var email = document.getElementById("email").value;
+            var category = document.getElementById("Category").value;
+            var item = document.getElementById("items").value;
+            var address = document.getElementById("address").value;
+            var state = document.getElementById("state").value;
+            var pincode = document.getElementById("pincode").value;
+
+            var url = "https://wa.me/917090509910?text="
+                + "Name: " + name + "%0a"
+                + "Phone: " + phone + "%0a"
+                + "Email: " + email + "%0a"
+                + "Category: " + category + "%0a"
+                + "Item: " + item + "%0a"
+                + "Address: " + address + "%0a"
+                + "State: " + state + "%0a"
+                + "Pincode: " + pincode 
+                ;
+
+            window.open(url, '_blank').focus();
+        }
+    </script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

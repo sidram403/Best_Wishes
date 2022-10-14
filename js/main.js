@@ -1,69 +1,31 @@
-$(function() {
+function send(){
+	var name = document.getElementById('name').value;
+	console.log(name);
+	var email = document.getElementById('email').value;
+	console.log(email);
+	var url = "https://wa.me/919108761650?text="
+				  + "Name: " + name + "%0a"
+				  + "Phone: " + phone + "%0a"
+				  + "Email: " + email + "%0a"
+				  + "Service: " + service;
 
-	'use strict';
+			  window.open(url, '_blank').focus();
+}
+function random(){
+	var category =document.getElementById('Category').value;
 
-	// Form
-
-	var contactForm = function() {
-
-		if ($('#contactForm').length > 0 ) {
-			$( "#contactForm" ).validate( {
-				rules: {
-					name: "required",
-					email: {
-						required: true,
-						email: true
-					},
-					message: {
-						required: true,
-						minlength: 5
-					}
-				},
-				messages: {
-					name: "Please enter your name",
-					email: "Please enter a valid email address",
-					message: "Please enter a message"
-				},
-				/* submit via ajax */
-				submitHandler: function(form) {		
-					var $submit = $('.submitting'),
-						waitText = 'Submitting...';
-
-					$.ajax({   	
-				      type: "POST",
-				      url: "php/send-email.php",
-				      data: $(form).serialize(),
-
-				      beforeSend: function() { 
-				      	$submit.css('display', 'block').text(waitText);
-				      },
-				      success: function(msg) {
-		               if (msg == 'OK') {
-		               	$('#form-message-warning').hide();
-				            setTimeout(function(){
-		               		$('#contactForm').fadeOut();
-		               	}, 1000);
-				            setTimeout(function(){
-				               $('#form-message-success').fadeIn();   
-		               	}, 1400);
-			               
-			            } else {
-			               $('#form-message-warning').html(msg);
-				            $('#form-message-warning').fadeIn();
-				            $submit.css('display', 'none');
-			            }
-				      },
-				      error: function() {
-				      	$('#form-message-warning').html("Something went wrong. Please try again.");
-				         $('#form-message-warning').fadeIn();
-				         $submit.css('display', 'none');
-				      }
-			      });    		
-		  		}
-				
-			} );
-		}
-	};
-	contactForm();
-
-});
+	if(category == 'Name_Initials'){
+		var array = ['Select item', 'Multicolored Couple Initial','Glowing Single Name','Glowing Double Name','LED Name Table Top','Glowing Couple Initial', 'LED Initial'];
+	}else if(category == 'Personalized_Keychains'){
+		var array = ['Selct item','Personalized LED Keychain','Spotify Keychain','Couple Keychain', 'Drive Safe Keychain','Spotify Keychain','the day we become one keychain', 'Save the date keychain', 'Baby foot keychain'];
+	}else if(category == 'Table_tops'){
+		var array = ['Selct item','photo Table Top','Combo', 'Spotify plaque','LED double mosaic table top','Multicolored Heart'];
+	}else{
+		var array=[''];
+	}
+	var string ='';
+	for(var i=0;i<array.length;i++){
+		string = string + '<option>' + array[i] + '</option>';
+		document.getElementById('items').innerHTML=string;
+	}
+}
