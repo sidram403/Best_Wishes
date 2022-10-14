@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap" rel="stylesheet">
+
+    
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Byu Products - Best Wishes</title>
+  </head>
+  <body>
+  
+
+  <div class="content">
+    
+    <div class="container">
+      <div class="row align-items-stretch no-gutters contact-wrap">
+        <div class="col-md-12">
+          <div class="form h-100">
+            <h3>Get Started</h3>
+            <form class="mb-5" type="submit"   >
+              <div class="row">
+                <div class="col-md-6 form-group mb-3">
+                  <label for="" class="col-form-label">Name *</label>
+                  <input type="text" class="form-control" name="name" id="name" placeholder="Your name" required>
+                </div>
+                <div class="col-md-6 form-group mb-3">
+                  <label for="" class="col-form-label">Email *</label>
+                  <input type="text" class="form-control" name="email" id="email"  placeholder="Your email" required>
+                </div>
+                <div class="col-md-6 form-group mb-3">
+                    <label for="" class="col-form-label">Mobile Number *</label>
+                    <input type="number" class="form-control" name="number" id="phone"  placeholder="Your Number" required>
+                </div>
+                <div class="col-md-6 form-group mb-3">
+                    <label for="" class="col-form-label">State *</label>
+                    <input type="text" class="form-control" name="state" id="state"  placeholder="State" required>
+                </div>
+              </div>
+              
+
+              <div class="row">
+                <div class="col-md-6 form-group mb-3">
+                    <label for="budget" class="col-form-label">Category</label>
+                    <select class="custom-select" id="Category" name="budget" onchange="random()">
+                        <option selected>Select Required Category</option>
+                        <option value="Name_Initials">Name Initials</option>
+                        <option value="Personalized_Keychains">Personalized Keychains</option>
+                        <option value="Table_tops">Table tops</option>
+                        <option value="Glowing_Plaque">Glowing Plaque</option>
+                        <option value="Personalized_Cushions">Personalized Cushions</option>
+                        <option value="Engagement_Platter">Engagement Platter</option>
+                        <option value="Miscellaneou_Products">Miscellaneous Products</option>
+                        <option value="Religious_Products">Religious Products</option>
+                        <option value="Personalized_wall_clocks">Personalized wall clocks</option>
+                        <option value="Personalized_wallets">Personalized wallets</option>
+                        <option value="Combo">Combo</option>
+                        <option value="Chocolates">Chocolates</option>
+                        <option value="Name_Plate">Name Plate</option>
+                        <option value="Photo_Frame">Photo Frame</option>
+                        <option value="Calendar">Calendar</option>
+                        <option value="Gifts_for_valentine's">Gifts for valentine's</option>
+                        <option value="Neon_Signs">Neon Signs</option>
+
+                    </select>
+                </div>
+                <div class="col-md-6 form-group mb-3">
+                    <label for="budget" class="col-form-label">Products</label>
+                    <select class="custom-select" id="items" name="budget">
+                        <option value=""></option>
+                        <!-- <option selected>Select Required Products</option>
+                        <option value="$1000 below">< $1,000</option>
+                        <option value="$2,000 - $5,000">$2,000 - $5,000</option>
+                        <option value="$5,000 - $15,000">$5,000 - $15,000</option>
+                        <option value="$15,000 - $25,000">$15,000 - $25,000</option>
+                        <option value="$25,000 >">$25,000 ></option> -->
+                    </select>
+                </div>
+                <div class="col-md-6 form-group mb-3">
+                    <label for="" class="col-form-label">Pincode *</label>
+                    <input type="number" class="form-control" name="pincode" id="pincode"  placeholder="Pincode" required>
+                </div>
+                <div class="col-md-6 form-group mb-3">
+                    <label for="budget" class="col-form-label">Fast Delivery</label>
+                    <select class="custom-select" id="delivery" name="budget">
+                        <option selected>Select Options</option>
+                        <option >Yes</option>
+                        <option >No</option>
+                        
+                    </select>
+                </div>
+
+              </div>
+
+              <div class="row">
+                <div class="col-md-12 form-group mb-3">
+                  <label for="message" class="col-form-label">Address *</label>
+                  <textarea class="form-control" name="message" id="address" cols="30" rows="4"  placeholder="Enter Your Full Address" required></textarea>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 form-group" >
+                  <button type="submit" value="Send Message" class="btn btn-primary rounded-0 py-2 px-4" onclick="send()" >Send Message</button>
+                  <span class="submitting"></span>
+                </div>
+              </div>
+            </form>
+
+            <div id="form-message-warning mt-4"></div> 
+            <div id="form-message-success">
+              Your message was sent, thank you!
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+    
+    
+  <script>
+    function send(){
+      var name = document.getElementById('name').value;
+      console.log(name);
+      var email = document.getElementById('email').value;
+      console.log(email);
+      var url = "https://wa.me/9108761650?text="
+                    + "Name: " + name + "%0a"
+                    + "Phone: " + phone + "%0a"
+                    + "Email: " + email + "%0a"
+                    + "Service: " + service;
+
+                window.open(url, '_blank').focus();
+    }
+   
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/custom.js"></script>
+
+  </body>
+</html>
