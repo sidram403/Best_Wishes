@@ -1,16 +1,4 @@
-function send(){
-	var name = document.getElementById('name').value;
-	console.log(name);
-	var email = document.getElementById('email').value;
-	console.log(email);
-	var url = "https://wa.me/919108761650?text="
-				  + "Name: " + name + "%0a"
-				  + "Phone: " + phone + "%0a"
-				  + "Email: " + email + "%0a"
-				  + "Service: " + service;
 
-			  window.open(url, '_blank').focus();
-}
 function random(){
 	var category =document.getElementById('Category').value;
 

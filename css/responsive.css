@@ -365,8 +365,8 @@
         align-items: center;
     }
     .toggle_icon {
-        cursor: pointer;
-        order: 2;
+        
+        display: none;
     }
     .main {
         margin: 0px 0px 0px 0px;
@@ -378,6 +378,7 @@
         width: auto;
         margin-right: 0px;
         margin-left: 10px;
+        display: none;
     }
     .header_box {
         order: 1;
@@ -387,7 +388,7 @@
         justify-content: space-between;
     }
     .dropdown {
-        display: none;
+        margin-left: 80px;
     }
     .login_menu li {
         float: left;
@@ -402,6 +403,9 @@
     }
     .banner_taital {
         font-size: 24px;
+    }
+    .mb-carousel {
+        display: block;
     }
     #my_slider a.carousel-control-prev {
         top: -10px;
