@@ -1,3 +1,6 @@
-Heading1
+# Heading1
 
+```c++
 console.log('hello world')
+```
+
